@@ -1,17 +1,21 @@
 Feature('Buying products on Swag Labs');
 
 const { loginPage, homePage, productPage, cartPage } = inject()
-const name = require('../Utils/name')
-const code = require('../Utils/code')
+const name = require('../../Utils/name')
+const code = require('../../Utils/code')
 
 const firstName = name.getFirstName()
 const lastName = name.getLastName()
 const postalCode = code.getCode()
-const user = 'standard_user'
-const password = 'secret_sauce'
+
+// YAML file
+const fs = require("fs");
+const YAML = require("js-yaml");
+const raw = fs.readFileSync("resource/data/credencial.yaml");
+const data = YAML.load(raw);
 
 Before(() => {
-    loginPage.loginApp(user, password)
+    loginPage.loginApp(data.valid_credential.user, data.valid_credential.password)
     homePage.checkLoginSuccess()
 });
 

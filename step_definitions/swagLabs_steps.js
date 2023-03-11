@@ -6,11 +6,15 @@ const code = require('../Utils/code')
 const firstName = name.getFirstName()
 const lastName = name.getLastName()
 const postalCode = code.getCode()
-const user = 'standard_user'
-const password = 'secret_sauce'
+
+// YAML file
+const fs = require("fs");
+const YAML = require("js-yaml");
+const raw = fs.readFileSync("resource/data/credencial.yaml");
+const data = YAML.load(raw);
 
 Given('that I am logged into Swag Labs over the internet', () => {
-    loginPage.loginApp(user, password)
+    loginPage.loginApp(data.valid_credential.user, data.valid_credential.password)
     homePage.checkLoginSuccess()
 });
 

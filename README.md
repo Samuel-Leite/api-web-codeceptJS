@@ -1,10 +1,51 @@
-# Projeto de automação de testes com codeceptjs e appium
+# Projeto de automação de testes com CodeceptJS com Playwright e REST API
+
+# Pré-Requisitos:
+Java 11 JDK,
+VS Code
+
+## Estrutura do Projeto
+./features/web.feature:
+Constam os cenários de testes WEB escritos em BDD para execução
+
+./output:
+Evidências da execução dos testes
+
+./pages:
+Responsável pelos mapeamento das páginas dos testes
+
+./resource/api/jsonSchema.js:
+Responsável por fazer as validações da estrutura do response da API
+
+./resource/api/responseValidation.js:
+Responsável por fazer as validações de forma genérica do response da API
+
+./step_definitions/web_steps:
+Responsável pelos steps versus BDD
+
+./tests/api/pet_store_test.js:
+Constam os cenários de testes de API para execução sem BDD
+
+./tests/ui/swag_lab_test.js:
+Constam os cenários de testes de WEB para execução sem BDD
+
+./Utils/name.js:
+Responsável por gerar nomes randômicos durante a execução dos testes da API
+
+./Utils/code.js:
+Responsável por gerar números randômicos durante a execução dos testes da API
+
+# Observações:
+Faça o donwload do template no repositório de código para utilizar no seu projeto em especifico, feito isso, fique a vontande para usufruir dos recursos disponíveis e também customizar de acordo com sua necessidade.
+
+# Comandos utilizados durante a construção da automação de API com CodeceptJS
 
 ## Inicialização do projeto:
 npm init
 
 ## Instalação do codeceptjs na pasta do projeto:
 npm i playwright@^1.18 --save
+npm i codeceptjs --save-dev
 
 ## Inicialização do codeceptjs:
 npx codeceptjs init
@@ -31,12 +72,5 @@ npx codeceptjs run
 npm install node-random-name
 npm install random-number
 
-## Relatorio Allure
-npm install -g allure-commandline --save-dev
-npx codeceptjs run --plugins allure
-npx allure serve output
-
-## Referenciar o formato dos campos ao mapear
-. -> class
-# - > id
-~ -> acessibility id
+## Instalação do YAML
+npm i js-yaml

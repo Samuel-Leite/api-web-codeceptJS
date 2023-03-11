@@ -8,5 +8,10 @@ const getLastName = () => {
     return random_name({ last: true });
 }
 
+const getFullName = () => {
+    return random_name({ random: Math.random });
+}
+
 exports.getFirstName = getFirstName
 exports.getLastName = getLastName
+exports.getFullName = getFullName

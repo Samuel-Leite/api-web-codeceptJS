@@ -5,14 +5,20 @@ exports.config = {
       url: 'https://www.saucedemo.com',
       show: true,
       browser: 'chromium'
-    }
+    },
+    REST: {
+      endpoint: 'https://petstore.swagger.io'
+    },
+    JSONResponse: {}
   },
   include: {
     I: './steps_file.js',
     loginPage: './pages/login_page.js',
     homePage: './pages/home_page.js',
     productPage: './pages/product_page.js',
-    cartPage: './pages/cart_page.js'
+    cartPage: './pages/cart_page.js',
+    jsonSchema: "./resource/api/jsonSchema.js",
+    responseValidation: "./resource/api/responseValidation.js"
   },
   mocha: {},
   bootstrap: null,
@@ -20,8 +26,11 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/*.feature',
-    steps: ['./step_definitions/steps.js']
+    // features: './features/petStore.feature',
+    // steps: ['./step_definitions/petStore_steps.js'],
+
+    // features: './features/swagLabs.feature',
+    // steps: ['./step_definitions/swagLabs_steps.js'],
   },
   plugins: {
     screenshotOnFail: {
@@ -38,6 +47,7 @@ exports.config = {
       timeout: 0
     }
   ],
-  // tests: './tests/*_test.js',
+  tests: './tests/api/pet_store_test.js',
+  // tests: './tests/ui/swag_lab_test.js',
   name: 'web-codeceptjs'
 }
