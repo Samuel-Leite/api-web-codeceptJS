@@ -74,3 +74,7 @@ npm install random-number
 
 ## Instalação do YAML
 npm i js-yaml
+
+## Relatorio Allure
+npm install @codeceptjs/allure-legacy --save-dev
+npx allure serve output

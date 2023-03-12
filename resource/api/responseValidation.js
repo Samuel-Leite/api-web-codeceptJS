@@ -1,4 +1,5 @@
 const { I } = inject();
+const payload = require("../data/payload.json");
 
 module.exports = {
 
@@ -43,5 +44,9 @@ module.exports = {
       expect(data.type)
       expect(data.message)
   });
- }
+ },
+
+ responseContains(){
+   I.seeResponseContainsJson(payload)
+}
 }
