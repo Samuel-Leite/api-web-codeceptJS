@@ -3,7 +3,7 @@ Feature: Online shopping via mobile web
   I'd like to access the SwagLabs app
   To buy items
 
-  Background: I am logged into Swag Labs over the internet
+  Background: Logged into Swag Labs
     Given that I am logged into Swag Labs over the internet
 
   Scenario: I'd like to add the backpack to the cart online
