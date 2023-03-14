@@ -26,8 +26,8 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    // features: './features/petStore.feature',
-    // steps: ['./step_definitions/petStore_steps.js'],
+    features: './features/petStore.feature',
+    steps: ['./step_definitions/petStore_steps.js'],
 
     // features: './features/swagLabs.feature',
     // steps: ['./step_definitions/swagLabs_steps.js'],
@@ -58,7 +58,7 @@ exports.config = {
       timeout: 0
     }
   ],
-  tests: './tests/api/pet_store_test.js',
+  // tests: './tests/api/pet_store_test.js',
   // tests: './tests/ui/swag_lab_test.js',
   name: 'web-codeceptjs'
 }
