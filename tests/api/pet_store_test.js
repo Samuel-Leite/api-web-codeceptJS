@@ -1,4 +1,4 @@
-Feature('Sistema de cadastro da Pet Store');
+Feature('Pet Store registration system')
 
 const { jsonSchema, responseValidation } = inject()
 const name = require('../../Utils/name')
@@ -10,81 +10,87 @@ const numberId = number.getNumberId()
 const numberCategory = number.getNumberCategory()
 const numberTags = number.getNumberTags()
 
-const payload = require("../../resource/data/payload.json")
+const payload = require('../../resource/data/payload.json')
 
-Scenario('Cadastro de Pet', async ({ I }) => {
-    const responsePost = await I.sendPostRequest(`/v2/pet`, 
+Scenario('Registers the Pet', async ({ I }) => {
+  const responsePost = await I.sendPostRequest(
+    `/v2/pet`,
     payload,
-    payload.id = numberId,
-    payload.category.id = numberCategory,
-    payload.name = firstName,
-    payload.tags.id = numberTags,
-    payload.tags.name = fullName
-    , {
-        'Content-type': 'application/json; charset=UTF-8',
-    })
+    (payload.id = numberId),
+    (payload.category.id = numberCategory),
+    (payload.name = firstName),
+    (payload.tags.id = numberTags),
+    (payload.tags.name = fullName),
+    {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  )
 
-    responseValidation.validationStatus(200);
-    responseValidation.dontSeeCode(500);
-    responseValidation.validateTimeout(1000);
-    jsonSchema.complexJsonStructuresPOST();
-    jsonSchema.containsKeysPOST();
-    responseValidation.responseCallBackPOST();
-    responseValidation.responseContains();
-    
-    // console.log(responsePost)
-});
+  responseValidation.validationStatus(200)
+  responseValidation.dontSeeCode(500)
+  responseValidation.validateTimeout(1000)
+  jsonSchema.complexJsonStructuresPOST()
+  jsonSchema.containsKeysPOST()
+  responseValidation.responseCallBackPOST()
+  responseValidation.responseContains()
 
-Scenario('Atualização do cadastro do Pet', async ({ I }) => {
-    const responsePut = await I.sendPutRequest(`/v2/pet`, {
-        id: numberId,
-        category: {id: numberCategory,name: 'Cat'},
-        name: firstName,
-        photoUrls: ['photoURL'],
-        tags: [{id: numberTags,name: fullName}],
-        status: 'unavailable'
-    }, {
-        'Content-type': 'application/json; charset=UTF-8',
-    })
+  // console.log(responsePost)
+})
 
-    responseValidation.validationSuccessfulStatus();
-    responseValidation.dontSeeCode(422);
-    responseValidation.validateTimeout(1000);
-    jsonSchema.complexJsonStructuresPOST();
-    jsonSchema.containsKeysPOST();
-    responseValidation.responseCallBackPOST();
+Scenario('Updates the Pets registration', async ({ I }) => {
+  const responsePut = await I.sendPutRequest(
+    `/v2/pet`,
+    {
+      id: numberId,
+      category: { id: numberCategory, name: 'Cat' },
+      name: firstName,
+      photoUrls: ['photoURL'],
+      tags: [{ id: numberTags, name: fullName }],
+      status: 'unavailable'
+    },
+    {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  )
 
-    // console.log(responsePut)
-});
+  responseValidation.validationSuccessfulStatus()
+  responseValidation.dontSeeCode(422)
+  responseValidation.validateTimeout(1000)
+  jsonSchema.complexJsonStructuresPOST()
+  jsonSchema.containsKeysPOST()
+  responseValidation.responseCallBackPOST()
 
-Scenario('Consulta do cadastro do Pet', async ({ I }) => {
-    const payloadGet = await I.sendGetRequest(`/v2/pet/` + numberId)
+  // console.log(responsePut)
+})
 
-    responseValidation.validationStatus(200);
-    responseValidation.dontSeeCode(422);
-    responseValidation.validateTimeout(1000);
-    jsonSchema.complexJsonStructuresPOST();
-    jsonSchema.containsKeysPOST();
-    responseValidation.responseCallBackPOST();
-   
-    // console.log(payloadGet)
-});
+Scenario('Pet registration consultation', async ({ I }) => {
+  const payloadGet = await I.sendGetRequest(`/v2/pet/` + numberId)
 
-Scenario('Exclusão do cadastro do Pet', async ({ I }) => {
-    const payloadDelete = await I.sendDeleteRequest(`/v2/pet/` + numberId)
+  responseValidation.validationStatus(200)
+  responseValidation.dontSeeCode(422)
+  responseValidation.validateTimeout(1000)
+  jsonSchema.complexJsonStructuresPOST()
+  jsonSchema.containsKeysPOST()
+  responseValidation.responseCallBackPOST()
 
-    responseValidation.validationStatus(200);
-    responseValidation.dontSeeCode(500);
-    responseValidation.validateTimeout(1000);
-    jsonSchema.complexJsonStructuresDELETE();
-    jsonSchema.containsKeysDELETE();
-    responseValidation.responseCallBackDELETE();
-    
-    I.seeResponseContainsJson({
-        code: 200,
-        type: 'unknown',
-        message: numberId.toString(),
-    })
-    
-    // console.log(payloadDelete)
-});
+  // console.log(payloadGet)
+})
+
+Scenario('Deletion of the Pets registration', async ({ I }) => {
+  const payloadDelete = await I.sendDeleteRequest(`/v2/pet/` + numberId)
+
+  responseValidation.validationStatus(200)
+  responseValidation.dontSeeCode(500)
+  responseValidation.validateTimeout(1000)
+  jsonSchema.complexJsonStructuresDELETE()
+  jsonSchema.containsKeysDELETE()
+  responseValidation.responseCallBackDELETE()
+
+  I.seeResponseContainsJson({
+    code: 200,
+    type: 'unknown',
+    message: numberId.toString()
+  })
+
+  // console.log(payloadDelete)
+})

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx codeceptjs run --grep '@smoke4'",
     "ui": "npx codeceptjs run ./tests/ui/swag_lab_test.js",
-    "api": "npx codeceptjs run ./tests/api/pet_store_test.js"   
+    "api": "npx codeceptjs run ./tests/api/pet_store_test.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@codeceptjs/allure-legacy": "^1.0.2",
-    "codeceptjs": "^3.4.1"
+    "codeceptjs": "^3.4.1",
+    "eslint": "^8.36.0"
   }
-
 }

@@ -1,7 +1,6 @@
-const { I } = inject();
+const { I } = inject()
 
 module.exports = {
-
   homeMenu: {
     menu: '//*[contains(@class, "app_logo")]',
     cart: '//*[contains(@class, "shopping_cart_link")]'
@@ -12,7 +11,7 @@ module.exports = {
     I.seeElement(this.homeMenu.menu)
   },
 
-  checkCart(){
+  checkCart() {
     I.click(this.homeMenu.cart)
     I.wait(2)
   }

@@ -1,4 +1,4 @@
-const { I } = inject();
+const { I } = inject()
 
 module.exports = {
   buttons: {
@@ -21,7 +21,7 @@ module.exports = {
 
   checkoutProduct() {
     I.click(this.buttons.checkout)
-    I.wait(3)  
+    I.wait(3)
   },
 
   dataBuyer(txtFirstName, txtLastName, txtPostalCode) {
@@ -32,12 +32,12 @@ module.exports = {
     I.wait(3)
   },
 
-  completePayment(){
+  completePayment() {
     I.waitForElement(this.buttons.finish)
     I.click(this.buttons.finish)
     I.wait(3)
     I.waitForElement(this.message.paymentSuccess)
     I.seeElement(this.message.paymentSuccess)
     I.wait(3)
-  },
+  }
 }

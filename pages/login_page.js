@@ -1,7 +1,6 @@
-const { I } = inject();
+const { I } = inject()
 
 module.exports = {
-
   fields: {
     userName: '//input[@id = "user-name"]',
     password: '//input[@id = "password"]'
@@ -11,11 +10,11 @@ module.exports = {
     enter: '//input[@id = "login-button"]'
   },
 
-  loginApp(userName, password){
+  loginApp(userName, password) {
     I.amOnPage('/')
     I.waitForElement(this.fields.userName, 3)
-    I.fillField(this.fields.userName,userName)
-    I.fillField(this.fields.password,password)
+    I.fillField(this.fields.userName, userName)
+    I.fillField(this.fields.password, password)
     I.click(this.button.enter)
     I.wait(2)
   }

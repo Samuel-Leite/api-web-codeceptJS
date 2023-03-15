@@ -1,7 +1,6 @@
-const { I } = inject();
+const { I } = inject()
 
 module.exports = {
-
   homeMenu: {
     addCart: '//*[contains(text(),"Add to cart")]',
     pageBack: '//*[contains(text(),"Back to products")]'
@@ -16,55 +15,55 @@ module.exports = {
     tShirtRED: '//*[contains(text(),"Test.allTheThings() T-Shirt (Red)")]'
   },
 
-  addBackpackToCart(){
+  addBackpackToCart() {
     I.wait(2)
-    I.click(this.products.backPack)  
-    I.wait(2)
-    I.click(this.homeMenu.addCart)
-    I.wait(3)
-  },
-
-  addBikeLightToCart(){
-    I.wait(2) 
-    I.click(this.products.bikeLight)  
-    I.wait(2) 
-    I.click(this.homeMenu.addCart)
-    I.wait(3)
-  },
-
-  addBoltTShirtToCart(){
-    I.wait(2)
-    I.click(this.products.boltTShirt)  
+    I.click(this.products.backPack)
     I.wait(2)
     I.click(this.homeMenu.addCart)
     I.wait(3)
   },
 
-  addFleeceJacketToCart(){
+  addBikeLightToCart() {
     I.wait(2)
-    I.click(this.products.fleeceJacket)  
-    I.wait(2)
-    I.click(this.homeMenu.addCart)
-    I.wait(3)
-  },
-
-  addOnesieToCart(){
-    I.wait(2)
-    I.click(this.products.onesie)  
+    I.click(this.products.bikeLight)
     I.wait(2)
     I.click(this.homeMenu.addCart)
     I.wait(3)
   },
 
-  addTShirtREDToCart(){
+  addBoltTShirtToCart() {
     I.wait(2)
-    I.click(this.products.tShirtRED)  
+    I.click(this.products.boltTShirt)
     I.wait(2)
     I.click(this.homeMenu.addCart)
     I.wait(3)
   },
 
-  backMenu(){
+  addFleeceJacketToCart() {
+    I.wait(2)
+    I.click(this.products.fleeceJacket)
+    I.wait(2)
+    I.click(this.homeMenu.addCart)
+    I.wait(3)
+  },
+
+  addOnesieToCart() {
+    I.wait(2)
+    I.click(this.products.onesie)
+    I.wait(2)
+    I.click(this.homeMenu.addCart)
+    I.wait(3)
+  },
+
+  addTShirtREDToCart() {
+    I.wait(2)
+    I.click(this.products.tShirtRED)
+    I.wait(2)
+    I.click(this.homeMenu.addCart)
+    I.wait(3)
+  },
+
+  backMenu() {
     I.click(this.homeMenu.pageBack)
     I.wait(3)
   }

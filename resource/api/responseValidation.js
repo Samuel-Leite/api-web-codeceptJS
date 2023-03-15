@@ -1,28 +1,27 @@
-const { I } = inject();
-const payload = require("../data/payload.json");
+const { I } = inject()
+const payload = require('../data/payload.json')
 
 module.exports = {
-
- validationStatus(statusCode){
-   if (statusCode != 200) {
-      I.seeResponseCodeIs(404);
+  validationStatus(statusCode) {
+    if (statusCode != 200) {
+      I.seeResponseCodeIs(404)
     }
- },
-
- validationSuccessfulStatus(){
-   I.seeResponseCodeIsSuccessful();
   },
 
- dontSeeCode(dontSeeStatusCode){
-    I.dontSeeResponseCodeIs(dontSeeStatusCode);
- },
+  validationSuccessfulStatus() {
+    I.seeResponseCodeIsSuccessful()
+  },
 
- validateTimeout(timeOut){
-    I.setRequestTimeout(timeOut);
- },
+  dontSeeCode(dontSeeStatusCode) {
+    I.dontSeeResponseCodeIs(dontSeeStatusCode)
+  },
 
- responseCallBackPOST(){
-   I.seeResponseValidByCallback(({ data, status, expect }) => {
+  validateTimeout(timeOut) {
+    I.setRequestTimeout(timeOut)
+  },
+
+  responseCallBackPOST() {
+    I.seeResponseValidByCallback(({ data, status, expect }) => {
       expect(status).to.eql(200)
       expect(data.id)
       expect(data.category)
@@ -34,19 +33,19 @@ module.exports = {
       expect(data.tags.id)
       expect(data.tags.name)
       expect(data.status)
-  });
- },
+    })
+  },
 
- responseCallBackDELETE(){
-   I.seeResponseValidByCallback(({ data, status, expect }) => {
+  responseCallBackDELETE() {
+    I.seeResponseValidByCallback(({ data, status, expect }) => {
       expect(status).to.eql(200)
       expect(data.code)
       expect(data.type)
       expect(data.message)
-  });
- },
+    })
+  },
 
- responseContains(){
-   I.seeResponseContainsJson(payload)
-}
+  responseContains() {
+    I.seeResponseContainsJson(payload)
+  }
 }
