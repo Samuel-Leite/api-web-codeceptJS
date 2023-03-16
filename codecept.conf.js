@@ -27,11 +27,11 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    // features: './features/petStore.feature',
-    // steps: ['./step_definitions/petStore_steps.js']
+    features: './features/petStore.feature',
+    steps: ['./step_definitions/petStore_steps.js']
 
-    features: './features/swagLabs.feature',
-    steps: ['./step_definitions/swagLabs_steps.js']
+    // features: './features/swagLabs.feature',
+    // steps: ['./step_definitions/swagLabs_steps.js']
   },
   plugins: {
     screenshotOnFail: {
