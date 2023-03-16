@@ -1,4 +1,4 @@
-const { I } = inject()
+const { I, qaConfig } = inject()
 
 module.exports = {
   fields: {
@@ -11,7 +11,7 @@ module.exports = {
   },
 
   loginApp(userName, password) {
-    I.amOnPage('/')
+    I.amOnPage(qaConfig.swagLabs.baseUrl)
     I.waitForElement(this.fields.userName, 3)
     I.fillField(this.fields.userName, userName)
     I.fillField(this.fields.password, password)

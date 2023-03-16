@@ -1,5 +1,5 @@
 // variable global
-const { loginPage, homePage, productPage, cartPage } = inject()
+const { loginPage, homePage, productPage, cartPage, qaConfig } = inject()
 const name = require('../Utils/name')
 const code = require('../Utils/code')
 
@@ -7,14 +7,8 @@ const firstName = name.getFirstName()
 const lastName = name.getLastName()
 const postalCode = code.getCode()
 
-// YAML file
-const fs = require('fs')
-const YAML = require('js-yaml')
-const raw = fs.readFileSync('resource/data/credencial.yaml')
-const data = YAML.load(raw)
-
 Given('that I am logged into Swag Labs over the internet', () => {
-  loginPage.loginApp(data.valid_credential.user, data.valid_credential.password)
+  loginPage.loginApp(qaConfig.swagLabs.users.standard, qaConfig.swagLabs.passwords.standard)
   homePage.checkLoginSuccess()
 })
 

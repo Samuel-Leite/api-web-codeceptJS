@@ -17,8 +17,9 @@ exports.config = {
     homePage: './pages/home_page.js',
     productPage: './pages/product_page.js',
     cartPage: './pages/cart_page.js',
-    jsonSchema: "./resource/api/jsonSchema.js",
-    responseValidation: "./resource/api/responseValidation.js"
+    jsonSchema: './resource/api/jsonSchema.js',
+    responseValidation: './resource/api/responseValidation.js',
+    qaConfig: './configs/qa.js'
   },
   mocha: {},
   bootstrap: null,
@@ -26,11 +27,11 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/petStore.feature',
-    steps: ['./step_definitions/petStore_steps.js'],
+    // features: './features/petStore.feature',
+    // steps: ['./step_definitions/petStore_steps.js']
 
-    // features: './features/swagLabs.feature',
-    // steps: ['./step_definitions/swagLabs_steps.js'],
+    features: './features/swagLabs.feature',
+    steps: ['./step_definitions/swagLabs_steps.js']
   },
   plugins: {
     screenshotOnFail: {
@@ -41,7 +42,7 @@ exports.config = {
     },
     allure: {
       enabled: true,
-      require: '@codeceptjs/allure-legacy',
+      require: '@codeceptjs/allure-legacy'
     },
     stepByStepReport: {
       enabled: true,
@@ -49,7 +50,8 @@ exports.config = {
     }
   },
   stepTimeout: 0,
-  stepTimeoutOverride: [{
+  stepTimeoutOverride: [
+    {
       pattern: 'wait.*',
       timeout: 0
     },
