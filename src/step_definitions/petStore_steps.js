@@ -1,6 +1,6 @@
 const { I, jsonSchema, responseValidation, qaConfig } = inject()
-const number = require('../Utils/code')
-const name = require('../Utils/name')
+const number = require('../Utils/variableRandom/randomNumber')
+const name = require('../Utils/variableRandom/randomName')
 
 const firstName = name.getFirstName()
 const fullName = name.getFullName()

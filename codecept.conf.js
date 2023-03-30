@@ -13,13 +13,13 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    loginPage: './pages/login_page.js',
-    homePage: './pages/home_page.js',
-    productPage: './pages/product_page.js',
-    cartPage: './pages/cart_page.js',
-    jsonSchema: './resource/api/jsonSchema.js',
-    responseValidation: './resource/api/responseValidation.js',
-    qaConfig: './configs/qa.js'
+    loginPage: './src/Utils/pages/login_page.js',
+    homePage: './src/Utils/pages/home_page.js',
+    productPage: './src/Utils/pages/product_page.js',
+    cartPage: './src/Utils/pages/cart_page.js',
+    jsonSchema: './src/Utils/api/jsonSchema.js',
+    responseValidation: './src/Utils/api/responseValidation.js',
+    qaConfig: './src/configs/qa.js'
   },
   mocha: {},
   bootstrap: null,
@@ -27,11 +27,11 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/petStore.feature',
-    steps: ['./step_definitions/petStore_steps.js']
+    features: './src/features/petStore.feature',
+    steps: ['./src/step_definitions/petStore_steps.js']
 
-    // features: './features/swagLabs.feature',
-    // steps: ['./step_definitions/swagLabs_steps.js']
+    // features: './src/features/swagLabs.feature',
+    // steps: ['./src/step_definitions/swagLabs_steps.js']
   },
   plugins: {
     screenshotOnFail: {
@@ -60,7 +60,7 @@ exports.config = {
       timeout: 0
     }
   ],
-  // tests: './tests/api/pet_store_test.js',
-  // tests: './tests/ui/swag_lab_test.js',
+  // tests: './src/tests/api/pet_store_test.js',
+  // tests: './src/tests/ui/swag_lab_test.js',
   name: 'web-codeceptjs'
 }
