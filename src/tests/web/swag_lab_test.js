@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
 Feature('Buying products on Swag Labs')
 
 const { loginPage, homePage, productPage, cartPage, qaConfig } = inject()

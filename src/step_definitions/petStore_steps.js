@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
 const { I, jsonSchema, responseValidation, qaConfig } = inject()
 const number = require('../Utils/variableRandom/randomNumber')
 const name = require('../Utils/variableRandom/randomName')
@@ -30,7 +32,7 @@ Given('that the user registers the Pet', async () => {
   responseValidation.responseCallBackPOST()
   responseValidation.responseContains()
 
-  // console.log(responsePost)
+  console.log(responsePost)
 })
 
 When('the user updates the Pets registration', async () => {
@@ -56,11 +58,11 @@ When('the user updates the Pets registration', async () => {
   jsonSchema.containsKeysPOST()
   responseValidation.responseCallBackPOST()
 
-  // console.log(responsePut)
+  console.log(responsePut)
 })
 
 When('the user deletes the Pets record', async () => {
-  const payloadDelete = await I.sendDeleteRequest(`/v2/pet/` + numberId)
+  const payloadDelete = await I.sendDeleteRequest(`/v2/pet/ ${numberId}`)
 
   responseValidation.validationStatus(200)
   responseValidation.dontSeeCode(500)
@@ -75,11 +77,11 @@ When('the user deletes the Pets record', async () => {
     message: numberId.toString()
   })
 
-  // console.log(payloadDelete)
+  console.log(payloadDelete)
 })
 
 Then('the pet query will reflect', async () => {
-  const payloadGet = await I.sendGetRequest(`/v2/pet/` + numberId)
+  const payloadGet = await I.sendGetRequest(`/v2/pet/ ${numberId}`)
 
   responseValidation.validationStatus(200)
   responseValidation.dontSeeCode(422)
@@ -88,5 +90,5 @@ Then('the pet query will reflect', async () => {
   // jsonSchema.containsKeysPOST()
   // responseValidation.responseCallBackPOST()
 
-  // console.log(payloadGet)
+  console.log(payloadGet)
 })

@@ -6,18 +6,29 @@
   "scripts": {
     "test": "npx codeceptjs run --grep '@smoke4'",
     "ui": "npx codeceptjs run ./src/tests/web/swag_lab_test.js",
-    "api": "npx codeceptjs run ./src/tests/api/pet_store_test.js"
+    "api": "npx codeceptjs run ./src/tests/api/pet_store_test.js",
+    "lint": "eslint src --max-warnings=0"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "npx lint --fix"
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
     "node-random-name": "^1.0.1",
     "playwright": "1.18",
+    "prettier": "^2.8.7",
     "random-number": "^0.0.9"
   },
   "devDependencies": {
     "@codeceptjs/allure-legacy": "^1.0.2",
     "codeceptjs": "^3.4.1",
-    "eslint": "^8.36.0"
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.2.0"
   }
 }

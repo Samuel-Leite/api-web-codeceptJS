@@ -1,8 +1,8 @@
-var randomCode = require('random-number')
-var randomNumber = require('random-number')
+const randomCode = require('random-number')
+const randomNumber = require('random-number')
 
 const getCode = () => {
-  var options = {
+  const options = {
     min: 10000,
     max: 99999,
     integer: true
@@ -12,7 +12,7 @@ const getCode = () => {
 }
 
 const getNumberId = () => {
-  var options = {
+  const options = {
     min: 100,
     max: 999,
     integer: true
@@ -22,7 +22,7 @@ const getNumberId = () => {
 }
 
 const getNumberCategory = () => {
-  var options = {
+  const options = {
     min: 10,
     max: 99,
     integer: true
@@ -32,7 +32,7 @@ const getNumberCategory = () => {
 }
 
 const getNumberTags = () => {
-  var options = {
+  const options = {
     min: 1,
     max: 9,
     integer: true

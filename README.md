@@ -89,7 +89,21 @@ npm install random-number
 npm install @codeceptjs/allure-legacy --save-dev
 npx allure serve output
 
-## Instalação do eslint
+## Instalação do prettier e eslint
 
+npm install prettier
 npm install eslint -D
 npm init @eslint/config
+npm install eslint-config-airbnb-base
+npm install --save-dev eslint-plugin-prettier
+npm install --save-dev eslint-plugin-prettier eslint-config-prettier
+npm install --save-dev lint-staged
+
+## Instalação do Husky
+
+npm install husky --save-dev
+npm install -g git-cz
+npm install commitizen -g --force
+npm install --save-dev git-cz
+
+Obs.: Copiar a pasta .husky, changelog.config.js e adicionar comandos na pasta package.json

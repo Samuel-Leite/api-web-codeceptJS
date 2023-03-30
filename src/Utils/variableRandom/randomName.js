@@ -1,4 +1,4 @@
-var randomName = require('node-random-name')
+const randomName = require('node-random-name')
 
 const getFirstName = () => {
   return randomName({ first: true })

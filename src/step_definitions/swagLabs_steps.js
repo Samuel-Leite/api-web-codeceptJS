@@ -1,4 +1,5 @@
-// variable global
+// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
 const { loginPage, homePage, productPage, cartPage, qaConfig } = inject()
 const name = require('../Utils/variableRandom/randomName')
 const code = require('../Utils/variableRandom/randomNumber')
