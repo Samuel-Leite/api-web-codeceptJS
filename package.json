@@ -4,6 +4,9 @@
   "description": "automacao codeceptjs",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
+    "precommit": "git add . ",
+    "commit": "git cz && node .husky/push.js",
     "test": "npx codeceptjs run --grep '@smoke4'",
     "ui": "npx codeceptjs run ./src/tests/web/swag_lab_test.js",
     "api": "npx codeceptjs run ./src/tests/api/pet_store_test.js",
@@ -29,6 +32,8 @@
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "git-cz": "^4.9.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.2.0"
   }
 }
