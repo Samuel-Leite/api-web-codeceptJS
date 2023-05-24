@@ -108,7 +108,7 @@ OBS.: Após executar os comandos acima, copiar as pastas: .eslintignore, .eslint
 ]
 },
 
-## Instalação do Husky
+## Instalação do Husky:
 
 npm install husky --save-dev
 npm install -g git-cz
