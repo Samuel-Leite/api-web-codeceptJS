@@ -2,7 +2,6 @@
 
 # Pré-Requisitos:
 
-Java 11 JDK,
 VS Code
 
 ## Estrutura do Projeto
